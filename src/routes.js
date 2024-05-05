@@ -15,6 +15,12 @@ const OrderController = require("./app/controllers/OrderController")
 const upload = multer(multerConfig)
 
 
+
+    routes.get("/" ,(req,res)  => {
+        return res.json({message:"Hello to my fist API"})
+    })
+
+
 routes.post("/users",UserController.store)
 routes.post("/sessions",SessionController.store)
 
