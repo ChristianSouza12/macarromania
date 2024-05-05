@@ -15,7 +15,7 @@ class Database {
     }
 
     init() {
-        this.connection = new Sequelize(configDatabase);
+        this.connection = new Sequelize("postgresql://postgres:cLZkVQFcvhDKCFdkTayvXAvBmsWuqhJU@monorail.proxy.rlwy.net:55565/railway");
 
         // Inicializando os modelos
         models.forEach(model => {
@@ -34,7 +34,7 @@ class Database {
 
     mongo() {
         // Inicializa a conexão com o MongoDB
-        mongoose.connect("mongodb://localhost:27017/macarromania", 
+        mongoose.connect("mongodb://mongo:NYBMyprwQdCxSaOZItmbFshhuFcOEPrg@monorail.proxy.rlwy.net:45152", 
            
         );
     }
