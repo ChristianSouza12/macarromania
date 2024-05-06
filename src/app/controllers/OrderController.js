@@ -73,7 +73,7 @@ class OrderController {
     async update(request,response){
         const schema = Yup.object().shape({
             status: Yup.string().required()
-                
+
         });
 
         try {
@@ -86,7 +86,7 @@ class OrderController {
         if(!isAdmin){
             return response.status(401).json()
         }
-        
+
         const {id} = request.params
         const {status} = request.body
 
@@ -97,7 +97,7 @@ class OrderController {
             return response.status(400).json({error:error.message})
         }
 
-     
+
 
 
         return response.json({message:" Status was updated."})

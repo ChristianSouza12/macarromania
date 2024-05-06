@@ -8,7 +8,7 @@ module.exports = (request, response, next) => {
     if(!authToken){
         return response.status(401).json({error:"Token not provided"})
     }
-    
+
 
 
 
@@ -32,5 +32,5 @@ module.exports = (request, response, next) => {
 
 
 
-     
+
 };

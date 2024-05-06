@@ -1,5 +1,3 @@
-
-
 const mongoose = require("mongoose")
 
 const OrderSchema = new mongoose.Schema({
@@ -26,7 +24,7 @@ const OrderSchema = new mongoose.Schema({
 
 
 
-            
+
             id: {
                 type: Number,
                 required: true,
@@ -70,4 +68,3 @@ const OrderSchema = new mongoose.Schema({
 
 )
 module.exports = mongoose.model("Order", OrderSchema);
-

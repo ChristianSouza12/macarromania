@@ -83,7 +83,7 @@ class ProductController {
             path = request.file.filename
         }
 
-        
+
         const { name, price, category_id, offer } = request.body;
 
         await product.update({
@@ -94,12 +94,12 @@ class ProductController {
             offer,
         },
         {where:{id} }
-        
-        
-        
-        
-        
-        
+
+
+
+
+
+
         );
 
         return response.status(200).json();

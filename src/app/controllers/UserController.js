@@ -4,7 +4,6 @@
  show => Listar apenas UM
  update => Atualizar
  delete => Deletar
-
 */
 
 const { v4 } = require("uuid");
@@ -34,7 +33,7 @@ class UserController{
          }catch(err){
             return response.status(400).json({error: err.errors})
          }
-        
+
 
         const {name,email,password,admin} = request.body
 
@@ -48,8 +47,8 @@ class UserController{
         }
 
 
-       
-        
+
+
         const user  = await  User.create( {
         id:v4(),
         name,

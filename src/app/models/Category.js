@@ -12,7 +12,7 @@ class Category extends Model {
                         return `http://localhost:3001/category-file/${this.path}`
                     }
                 }
-               
+
             },
             {
                 sequelize

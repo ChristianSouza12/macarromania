@@ -1,4 +1,3 @@
-
 const Yup = require("yup");
 const Category = require("../models/Category");
 const User = require("../models/User");
@@ -8,10 +7,10 @@ class CategoryController{
    async store(request,response){
     const schema = Yup.object().shape({
         name:Yup.string().required(),
-        
+
     })
 
-   
+
         try{
             await schema.validateSync(request.body, {abortEarly:false})
         }catch(err){
@@ -23,7 +22,7 @@ class CategoryController{
         if(!isAdmin){
             return response.status(401).json()
         }
-     
+
 
         const {name} = request.body
 
@@ -45,17 +44,17 @@ class CategoryController{
 
    async index(request,response){
     const category = await Category.findAll()
-    
+
     return response.json(category)
    }
 
    async update(request,response){
     const schema = Yup.object().shape({
         name:Yup.string()
-        
+
     })
 
-   
+
         try{
             await schema.validateSync(request.body, {abortEarly:false})
         }catch(err){
@@ -67,7 +66,7 @@ class CategoryController{
         if(!isAdmin){
             return response.status(401).json()
         }
-     
+
 
         const {name} = request.body
 
@@ -84,10 +83,10 @@ class CategoryController{
         if(request.file){
             path = request.file.filename
         }
-       
 
-      
-       
+
+
+
 
         await Category.update({ name , path}, {where:{id}})
 
